@@ -1,0 +1,148 @@
+1
+
+
+salaries = ["102,633", "82,012", "129,860", "48,949", "55,208", "95,600", "40,030"]
+names = ["Willena Shupe", "Jolanda Agin", "Leta Stacker",
+  "Leonora Oliverio", "Birgit Stoudt", "Aron Valtierra", "Vi Buschman"
+  ]
+converted_salaries=salaries
+total=int()
+total2=int()
+
+
+print('{:20s}{:15s}{:15s}'.format('Employee', '2020 Salary','2021 Salary'))
+print("----------------------------------------------")
+for i in range(0, 7):
+    converted_salaries[i] = converted_salaries[i].replace(',', '')
+    addition=int(converted_salaries[i])*(3/100)
+    add2=int(converted_salaries[i])+addition
+    comma="{:,}".format(int(salaries[i]))
+    comma2="{:,}".format(round(add2))
+    print('{:20s}{:15s}{:15s}'.format(names[i],comma,comma2))
+    total=total+int(converted_salaries[i])
+    total2=total2+add2
+    comma3="{:,}".format(round(total2))
+    comma4="{:,}".format(round(total))
+print("----------------------------------------------")
+print('{:20s}{:15s}{:15s}'.format('Total',comma4,comma3))
+
+
+2
+
+
+email_spam = ["X-DSPAM-Confidence:0.8475", "X-DSPAM-Confidence:0.6178",
+  "X-DSPAM-Confidence:0.6961", "X-DSPAM-Confidence:0.7565", "X-DSPAM-Confidence:0.7626"]
+
+converted_string=email_spam
+print("X-DSPAM-Confidence")
+for i in range(0,len(email_spam)):
+    converted_string[i]=converted_string[i].replace("X-DSPAM-Confidence:",'0')
+    result=float( converted_string[i])*100
+    comma=round(result,2)
+    print(f"Email {i+1}: {comma}%")
+
+
+
+
+3
+
+
+temperatures = [72, 32, 24, 61, 30, 42, 51, 21, 56, 32, 39, 70, 75, 54, 62, 49, 28, 54, 39, 24,
+  31, 64, 72, 27]
+count=int()
+count=0
+count2=0
+divide=int()
+comma=temperatures
+divide=int(len(temperatures)/4)
+while count<len(temperatures):
+    count2+=1
+    print(f"Quarter {count2}:")
+
+    for i in range(int(count),int(divide)):
+    
+        print(temperatures[i],end=" ")
+    
+    print("\n")
+    count=divide
+    divide=divide+(len(temperatures)/4)
+
+
+
+4
+a
+
+lst = list(map(float, input("Enter the values(the length should be divisiable by 4): ").split(",")))
+
+lst.sort()
+print("\n")
+
+print(f"The sorted array:{lst}")
+
+print("\n")
+
+q1=round(len(lst)*(25/100))-1
+
+q2=round(len(lst)*(50/100))-1
+
+q3=round(len(lst)*(75/100))-1
+
+
+print(f"Quartile 1: {lst[q1]}\nQuartile 2: {lst[q2]}\nQuartile 3: {lst[q3]}\n")
+
+print(f"The Inter-quartile range is {lst[q3]-lst[q1]}")
+
+
+b
+
+
+
+grades = [73, 92, 79, 89, 94, 89, 68, 82, 80, 67, 94, 77, 80, 69, 70, 68, 78,
+76, 84, 71, 94, 89, 69, 71]
+
+print(f"Unsorted grades{grades}")
+
+print("\n")
+
+grades.sort()
+
+print(f"The sorted grades:{grades}")
+
+print("\n")
+
+q1=round(len(grades)*(25/100))-1
+
+q2=round(len(grades)*(50/100))-1
+
+q3=round(len(grades)*(75/100))-1
+
+print(f"0% to 25% range")
+for i in range(0,q1):
+    print(grades[i],end=' ')
+    
+print("\n")
+    
+print(f"25% to 50% range")
+for i in range(q1,q2):
+    print(grades[i],end=' ')
+    
+print("\n")
+
+print(f"50% to 75% range")
+for i in range(q2,q3):
+    print(grades[i],end=' ')
+    
+print("\n")
+    
+print(f"75% to 100% range")
+for i in range(q3,len(grades)):
+    print(grades[i],end=' ')
+    
+print("\n")
+
+print(f"Quartile 1: {grades[q1]}\nQuartile 2: {grades[q2]}\nQuartile 3: {grades[q3]}\n")
+
+print("Elizabeth lies in 75% to 100% range that is Quartile 3 and above and here score is in the range ")
+for i in range(q3,len(grades)):
+    print(grades[i],end=' ')
+
